@@ -49,7 +49,8 @@ githubs = [
     ("bioio-devs", "bioio-bioformats"),
     ("toloudis", "py_viewer"),
     ("toloudis", "RayTracingInVulkan"),
-    ("toloudis", "raygbiv-electron")
+    ("toloudis", "raygbiv-electron"),
+    ("toloudis", "vv-webgpu")
 ]
 
 
