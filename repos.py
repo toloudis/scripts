@@ -6,7 +6,7 @@ from pathlib import Path
 githuburl = "https://github.com/{}/{}.git"
 #githuburl = "git@github.com:{}/{}.git"
 githubs = [
-    ("allen-cell-animated", "nucmorph-colorizer"),
+    ("allen-cell-animated", "timelapse-colorizer"),
     ("allen-cell-animated", "agave"),
     ("allen-cell-animated", "website-3d-cell-viewer"),
     ("allen-cell-animated", "colorizer-data"),
@@ -31,6 +31,7 @@ githubs = [
     ("simularium", "simularium-engine"),
     ("simularium", "simulariumio"),
     ("simularium", "nbsv"),
+    ("simularium", "simulariumXR"),
     ("aics-int", "ome-zarr-conversion"),
     ("AllenCellModeling", "napari-aicsimageio"),
     ("AllenCellModeling", "aicsimageio"),
