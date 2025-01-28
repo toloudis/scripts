@@ -8,11 +8,11 @@ githuburl = "https://github.com/{}/{}.git"
 githubs = [
     ("allen-cell-animated", "timelapse-colorizer"),
     ("allen-cell-animated", "agave"),
-    ("allen-cell-animated", "website-3d-cell-viewer"),
+    ("allen-cell-animated", "vole-app"),
     ("allen-cell-animated", "colorizer-data"),
     ("allen-cell-animated", "cellbrowser-tools"),
     ("allen-cell-animated", "cell-feature-data"),
-    ("allen-cell-animated", "volume-viewer"),
+    ("allen-cell-animated", "vole-core"),
     ("allen-cell-animated", "cell-feature-explorer"),
     ("allen-cell-animated", "nbvv"),
     ("allen-cell-animated", "deepzoom_demo"),
