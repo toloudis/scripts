@@ -1,10 +1,11 @@
+import os
 import subprocess
 import sys
 import traceback
 from pathlib import Path
 
 githuburl = "https://github.com/{}/{}.git"
-#githuburl = "git@github.com:{}/{}.git"
+# githuburl = "git@github.com:{}/{}.git"
 githubs = [
     ("allen-cell-animated", "timelapse-colorizer"),
     ("allen-cell-animated", "agave"),
@@ -55,7 +56,7 @@ githubs = [
 ]
 
 
-def git_run(cmd_args, work_dir: Path = None):
+def git_run(cmd_args, work_dir: Path):
     if work_dir is None:
         work_dir = '.'
     if cmd_args[0] != "git":
@@ -87,7 +88,7 @@ def git_current_branch(repo_dir, remoterepo, parent_dir):
     git_run(["rev-parse", "--abbrev-ref", "HEAD"], work_dir=repo_dir)
 
 
-def iterate_git(parent_dir, git_command):
+def iterate_git(parent_dir: Path, git_command):
     for i in githubs:
         project = i[0]
         repo = i[1]
@@ -100,7 +101,17 @@ def iterate_git(parent_dir, git_command):
 # status
 if __name__ == "__main__":
     try:
-        parent_dir = Path('C:\\Users\\danielt\\source\\repos')
+        # parent_dir = Path("/Users/danielt/src")
+        # parent_dir = Path('C:\\Users\\danielt\\source\\repos')
+
+        homedir = Path.home()
+        osname = os.name
+        if (osname == 'nt'):
+            parent_dir = Path(homedir / "source/repos")
+        else:  # posix ... or java?
+            parent_dir = Path(homedir / "src")
+
+        print(f"Parent Dir: {parent_dir}\n\n")
         # iterate_git(parent_dir, git_current_branch)
         iterate_git(parent_dir, git_clone)
         # iterate_git(parent_dir, git_pull)
