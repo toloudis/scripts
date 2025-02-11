@@ -36,7 +36,6 @@ githubs = [
     ("AllenInstitute", "biofile-finder"),
     ("aics-int", "ome-zarr-conversion"),
     ("AllenCellModeling", "napari-aicsimageio"),
-    ("AllenCellModeling", "aicsimageio"),
     ("AllenCellModeling", "aicsimageprocessing"),
     ("AllenCellModeling", "aicspylibczi"),
     ("bioio-devs", "bioio"),
