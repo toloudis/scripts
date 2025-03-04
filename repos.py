@@ -16,7 +16,6 @@ githubs = [
     ("allen-cell-animated", "vole-core"),
     ("allen-cell-animated", "cell-feature-explorer"),
     ("allen-cell-animated", "nbvv"),
-    ("allen-cell-animated", "deepzoom_demo"),
     ("allen-cell-animated", "z-stack-scroller"),
     ("allen-cell-animated", "threejs-cell-test"),
     ("allen-cell-animated", "pca-viewer"),
@@ -52,13 +51,13 @@ githubs = [
     ("toloudis", "py_viewer"),
     ("toloudis", "RayTracingInVulkan"),
     ("toloudis", "raygbiv-electron"),
-    ("toloudis", "vv-webgpu")
+    ("toloudis", "vv-webgpu"),
 ]
 
 
 def git_run(cmd_args, work_dir: Path):
     if work_dir is None:
-        work_dir = '.'
+        work_dir = "."
     if cmd_args[0] != "git":
         cmd_args.insert(0, "git")
     #
