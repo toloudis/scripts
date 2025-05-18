@@ -48,6 +48,8 @@ githubs = [
     ("bioio-devs", "bioio-sldy"),
     ("bioio-devs", "bioio-ome-zarr"),
     ("bioio-devs", "bioio-bioformats"),
+    ("toloudis", "headslayer"),
+    ("toloudis", "biocomputeserver"),
     ("toloudis", "py_viewer"),
     ("toloudis", "RayTracingInVulkan"),
     ("toloudis", "raygbiv-electron"),
