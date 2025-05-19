@@ -34,6 +34,7 @@ githubs = [
     ("simularium", "simulariumXR"),
     ("AllenInstitute", "biofile-finder"),
     ("aics-int", "ome-zarr-conversion"),
+    ("aics-int", "cvapipe_app"),
     ("AllenCellModeling", "napari-aicsimageio"),
     ("AllenCellModeling", "aicsimageprocessing"),
     ("AllenCellModeling", "aicspylibczi"),
