@@ -42,6 +42,7 @@ githubs = [
     ("bioio-devs", "bioio-base"),
     ("bioio-devs", "cookiecutter-bioio-reader"),
     ("bioio-devs", "bioio-czi"),
+    ("bioio-devs", "bioio-imageio"),
     ("bioio-devs", "bioio-lif"),
     ("bioio-devs", "bioio-nd2"),
     ("bioio-devs", "bioio-tifffile"),
