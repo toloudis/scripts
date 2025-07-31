@@ -25,6 +25,7 @@ githubs = [
     ("allen-cell-animated", "MolSimUnity"),
     ("allen-cell-animated", "ao-baking"),
     ("allen-cell-animated", "render-style-transfer"),
+    ("allen-cell-animated", "temporary-file-service"),
     ("simularium", "simularium-website"),
     ("simularium", "simularium-viewer"),
     ("simularium", "octopus"),
@@ -109,7 +110,7 @@ if __name__ == "__main__":
 
         homedir = Path.home()
         osname = os.name
-        if (osname == 'nt'):
+        if osname == "nt":
             parent_dir = Path(homedir / "source/repos")
         else:  # posix ... or java?
             parent_dir = Path(homedir / "src")
