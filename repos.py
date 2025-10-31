@@ -39,6 +39,7 @@ githubs = [
     ("AllenCellModeling", "napari-aicsimageio"),
     ("AllenCellModeling", "aicsimageprocessing"),
     ("AllenCellModeling", "aicspylibczi"),
+    ("AllenCellSoftware", "ansible-platform"),
     ("bioio-devs", "bioio"),
     ("bioio-devs", "bioio-base"),
     ("bioio-devs", "cookiecutter-bioio-reader"),
