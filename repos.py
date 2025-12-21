@@ -58,6 +58,14 @@ githubs = [
     ("toloudis", "RayTracingInVulkan"),
     ("toloudis", "raygbiv-electron"),
     ("toloudis", "vv-webgpu"),
+    ("toloudis", "vole-core"),
+    ("toloudis", "vole-app"),
+    ("toloudis", "simularium-viewer"),
+    ("toloudis", "simularium-website"),
+    ("toloudis", "biofile-finder"),
+    ("toloudis", "bioprism"),
+    ("toloudis", "timelapse-colorizer"),
+    ("toloudis", "cell-feature-explorer"),
 ]
 
 
