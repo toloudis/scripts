@@ -51,6 +51,7 @@ githubs = [
     ("bioio-devs", "bioio-sldy"),
     ("bioio-devs", "bioio-ome-zarr"),
     ("bioio-devs", "bioio-bioformats"),
+    ("bioio-devs", "bioio-conversion"),
     ("toloudis", "headslayer"),
     ("toloudis", "biocomputeserver"),
     ("toloudis", "py_viewer"),
