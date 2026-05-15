@@ -33,6 +33,8 @@ githubs = [
     ("simularium", "simulariumio"),
     ("simularium", "nbsv"),
     ("simularium", "simulariumXR"),
+    ("AllenCell", "internal-engineering-docs"),
+    ("AllenCell", "biofile-segmentation"),
     ("AllenInstitute", "biofile-finder"),
     ("aics-int", "ome-zarr-conversion"),
     ("aics-int", "cvapipe_app"),
