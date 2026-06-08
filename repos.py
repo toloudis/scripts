@@ -69,6 +69,9 @@ githubs = [
     ("toloudis", "bioprism"),
     ("toloudis", "timelapse-colorizer"),
     ("toloudis", "cell-feature-explorer"),
+    ("toloudis", "calendar"),
+    ("toloudis", "painter"),
+    ("toloudis", "heisenshadow"),
     ("toloudis", "zarr-webgpu-multicanvas-demo"),
 ]
 
