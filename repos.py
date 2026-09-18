@@ -7,9 +7,7 @@ from pathlib import Path
 githuburl = "https://github.com/{}/{}.git"
 # githuburl = "git@github.com:{}/{}.git"
 githubs = [
-    ("allen-cell-animated", "timelapse-colorizer"),
     ("allen-cell-animated", "vole-app"),
-    ("allen-cell-animated", "colorizer-data"),
     ("allen-cell-animated", "z-stack-scroller"),
     ("allen-cell-animated", "threejs-cell-test"),
     ("allen-cell-animated", "pca-viewer"),
@@ -26,6 +24,8 @@ githubs = [
     ("simularium", "simulariumio"),
     ("simularium", "nbsv"),
     ("simularium", "simulariumXR"),
+    ("AllenCell", "timelapse-colorizer"),
+    ("AllenCell", "tfe-data"),
     ("AllenCell", "agave"),
     ("AllenCell", "ansible-platform"),
     ("AllenCell", "cell-feature-explorer"),
@@ -36,6 +36,7 @@ githubs = [
     ("AllenCell", "terraform-platform"),
     ("AllenCell", "vole-core"),
     ("AllenInstitute", "biofile-finder"),
+    ("antoineborensztejn", "Total-microscope"),
     ("bioio-devs", "aicspylibczi"),
     ("bioio-devs", "bioio"),
     ("bioio-devs", "bioio-base"),
