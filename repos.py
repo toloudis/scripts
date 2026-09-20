@@ -81,10 +81,10 @@ def git_run(cmd_args, work_dir: Path):
         cmd_args.insert(0, "git")
     #
     try:
-        subprocess.run(cmd_args, cwd=work_dir, universal_newlines=True)
-    except subprocess.CalledProcessError:
+        result = subprocess.run(cmd_args, cwd=work_dir, universal_newlines=True)
+    except (subprocess.CalledProcessError, OSError):
         return False
-    return True
+    return result.returncode == 0
 
 
 def git_clone(repo_dir, remoterepo, parent_dir):
@@ -93,27 +93,34 @@ def git_clone(repo_dir, remoterepo, parent_dir):
         cmd_args = ["clone", remoterepo]
         return git_run(cmd_args, work_dir=parent_dir)
     else:
-        git_pull(repo_dir, remoterepo, parent_dir)
+        return git_pull(repo_dir, remoterepo, parent_dir)
 
 
 def git_pull(repo_dir, remoterepo, parent_dir):
     # Get the current branch
     print(repo_dir)
-    git_run(["pull", "--all"], work_dir=repo_dir)
+    return git_run(["pull", "--all"], work_dir=repo_dir)
 
 
 def git_current_branch(repo_dir, remoterepo, parent_dir):
-    git_run(["rev-parse", "--abbrev-ref", "HEAD"], work_dir=repo_dir)
+    return git_run(["rev-parse", "--abbrev-ref", "HEAD"], work_dir=repo_dir)
 
 
 def iterate_git(parent_dir: Path, git_command, githubs):
+    failures = []
     for i in githubs:
         project = i[0]
         repo = i[1]
         repo_dir: Path = parent_dir / project / repo
         remoterepo = githuburl.format(project, repo)
         print(f"\n{project}/{repo}")
-        git_command(repo_dir, remoterepo, parent_dir / project)
+        try:
+            result = git_command(repo_dir, remoterepo, parent_dir / project)
+            if result is False:
+                failures.append((f"{project}/{repo}", "git command reported failure"))
+        except Exception as e:
+            failures.append((f"{project}/{repo}", str(e)))
+    return failures
 
 
 # status
@@ -139,9 +146,18 @@ if __name__ == "__main__":
             parent_dir = Path(homedir / "src")
 
         print(f"Parent Dir: {parent_dir}\n\n")
-        # iterate_git(parent_dir, git_current_branch, githubs)
-        iterate_git(parent_dir, git_clone, githubs)
-        # iterate_git(parent_dir, git_pull, githubs)
+        # failures = iterate_git(parent_dir, git_current_branch, githubs)
+        failures = iterate_git(parent_dir, git_clone, githubs)
+        # failures = iterate_git(parent_dir, git_pull, githubs)
+
+        print("\n\n=============================================")
+        if failures:
+            print(f"{len(failures)} repo(s) failed:")
+            for name, reason in failures:
+                print(f"  - {name}: {reason}")
+        else:
+            print("All repos processed successfully.")
+        print("=============================================")
     except Exception as e:
         print("=============================================")
         print("\n\n" + traceback.format_exc())
