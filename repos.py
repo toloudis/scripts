@@ -6,7 +6,7 @@ from pathlib import Path
 
 githuburl = "https://github.com/{}/{}.git"
 # githuburl = "git@github.com:{}/{}.git"
-githubs = [
+githubs_work = [
     ("allen-cell-animated", "vole-app"),
     ("allen-cell-animated", "z-stack-scroller"),
     ("allen-cell-animated", "threejs-cell-test"),
@@ -36,7 +36,6 @@ githubs = [
     ("AllenCell", "terraform-platform"),
     ("AllenCell", "vole-core"),
     ("AllenInstitute", "biofile-finder"),
-    ("antoineborensztejn", "Total-microscope"),
     ("bioio-devs", "aicspylibczi"),
     ("bioio-devs", "bioio"),
     ("bioio-devs", "bioio-base"),
@@ -51,6 +50,9 @@ githubs = [
     ("bioio-devs", "bioio-ome-zarr"),
     ("bioio-devs", "bioio-bioformats"),
     ("bioio-devs", "bioio-conversion"),
+]
+githubs_personal = [
+    ("antoineborensztejn", "Total-microscope"),
     ("toloudis", "headslayer"),
     ("toloudis", "biocomputeserver"),
     ("toloudis", "py_viewer"),
@@ -104,7 +106,7 @@ def git_current_branch(repo_dir, remoterepo, parent_dir):
     git_run(["rev-parse", "--abbrev-ref", "HEAD"], work_dir=repo_dir)
 
 
-def iterate_git(parent_dir: Path, git_command):
+def iterate_git(parent_dir: Path, git_command, githubs):
     for i in githubs:
         project = i[0]
         repo = i[1]
@@ -117,6 +119,15 @@ def iterate_git(parent_dir: Path, git_command):
 # status
 if __name__ == "__main__":
     try:
+        which = sys.argv[1] if len(sys.argv) > 1 else "work"
+        if which == "work":
+            githubs = githubs_work
+        elif which == "personal":
+            githubs = githubs_personal
+        else:
+            print("Usage: python repos.py [work|personal]")
+            sys.exit(1)
+
         # parent_dir = Path("/Users/danielt/src")
         # parent_dir = Path('C:\\Users\\danielt\\source\\repos')
 
@@ -128,9 +139,9 @@ if __name__ == "__main__":
             parent_dir = Path(homedir / "src")
 
         print(f"Parent Dir: {parent_dir}\n\n")
-        # iterate_git(parent_dir, git_current_branch)
-        iterate_git(parent_dir, git_clone)
-        # iterate_git(parent_dir, git_pull)
+        # iterate_git(parent_dir, git_current_branch, githubs)
+        iterate_git(parent_dir, git_clone, githubs)
+        # iterate_git(parent_dir, git_pull, githubs)
     except Exception as e:
         print("=============================================")
         print("\n\n" + traceback.format_exc())
