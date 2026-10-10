@@ -14,6 +14,7 @@ githubs_work = [
     ("AllenCell", "cell-feature-data"),
     ("AllenCell", "cell-feature-explorer"),
     ("AllenCell", "internal-engineering-docs"),
+    ("AllenCell", "orchestra-figure-viewer"),
     ("AllenCell", "orchestra-planner"),
     ("AllenCell", "terraform-platform"),
     ("AllenCell", "tfe-data"),
