@@ -63,6 +63,7 @@ githubs_personal = [
     ("toloudis", "cell-feature-explorer"),
     ("toloudis", "headslayer"),
     ("toloudis", "heisenshadow"),
+    ("toloudis", "msp"),
     ("toloudis", "painter"),
     ("toloudis", "py_viewer"),
     ("toloudis", "raygbiv-electron"),
