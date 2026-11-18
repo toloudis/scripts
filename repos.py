@@ -8,13 +8,15 @@ githuburl = "https://github.com/{}/{}.git"
 # githuburl = "git@github.com:{}/{}.git"
 githubs_work = [
     ("AllenCell", "agave"),
+    ("AllenCell", "aics-lims"),
     ("AllenCell", "aics-tools"),
     ("AllenCell", "ansible-platform"),
     ("AllenCell", "biofile-segmentation"),
     ("AllenCell", "cell-feature-data"),
     ("AllenCell", "cell-feature-explorer"),
-    ("AllenCell", "internal-engineering-docs"),
-    ("AllenCell", "morphodyno-pipeline"),
+    ("AllenCell", "internal-docs"),
+    ("AllenCell", "kevinmitcham-development"),
+    ("AllenCell", "lumenoid-radii-explorer"),
     ("AllenCell", "orchestra-figure-viewer"),
     ("AllenCell", "orchestra-planner"),
     ("AllenCell", "program-pipelines"),
